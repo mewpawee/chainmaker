@@ -1,1 +1,0 @@
-./go-ethereum/build/bin/geth --allow-insecure-unlock --ethstats 'node2:asdf@localhost:3000' --datadir node2 --unlock 0x9456c31c95315f15efd76806ad6aa783d0bc5425 --password config/password.txt --mine --port 30304 --nodiscover --config config/config.toml
