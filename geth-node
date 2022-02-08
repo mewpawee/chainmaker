@@ -1,0 +1,30 @@
+#!/bin/bash
+#Split up the tmux window for IDE develop environment
+tmux new-window -n 'eth-netstats'
+tmux send-keys -t 0 'cd eth-netstats;export WS_SECRET=asdf;npm start' Enter
+tmux select-window -t 0
+
+tmux split-window -v -p 50 
+tmux split-window -h -p 66 
+tmux split-window -h -p 50 
+tmux select-pane -t 0 
+tmux split-window -h -p 66 
+tmux split-window -h -p 50
+
+#tmux send-keys -t 2 'tmux wait-for -S done1' Enter
+#tmux wait-for done1
+tmux send-keys -t 3 'bash chain.sh start node1' Enter
+tmux send-keys -t 4 'bash chain.sh start node2' Enter
+tmux send-keys -t 5 'bash chain.sh start node3' Enter
+sleep 5
+tmux send-keys -t 0 'geth attach node1/geth.ipc' Enter
+tmux send-keys -t 1 'geth attach node2/geth.ipc' Enter
+tmux send-keys -t 2 'geth attach node3/geth.ipc' Enter
+
+tmux send-keys -t 0 'admin.nodeInfo.enode' Enter
+tmux send-keys -t 1 'admin.nodeInfo.enode' Enter
+tmux send-keys -t 2 'admin.nodeInfo.enode' Enter
+
+tmux send-keys -t 0 'eth.accounts[0]' Enter
+tmux send-keys -t 1 'eth.accounts[0]' Enter
+tmux send-keys -t 2 'eth.accounts[0]' Enter
