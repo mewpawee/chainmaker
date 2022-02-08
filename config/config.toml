@@ -1,0 +1,62 @@
+[Eth]
+NetworkId = 12123
+SyncMode = "full"
+NoPruning = false
+NoPrefetch = false
+LightPeers = 100
+UltraLightFraction = 75
+DatabaseCache = 512
+DatabaseFreezer = ""
+TrieCleanCache = 256
+TrieCleanCacheJournal = "triecache"
+TrieCleanCacheRejournal = 3600000000000
+TrieDirtyCache = 256
+TrieTimeout = 3600000000000
+SnapshotCache = 0
+EnablePreimageRecording = false
+EWASMInterpreter = ""
+EVMInterpreter = ""
+RPCGasCap = 25000000
+RPCTxFeeCap = 1e+01
+
+[Eth.Miner]
+GasFloor = 60000000
+GasCeil = 60000000
+GasPrice = 5000000000
+Recommit = 3000000000
+Noverify = false
+
+[Eth.TxPool]
+Locals = []
+NoLocals = true
+Journal = "transactions.rlp"
+Rejournal = 3600000000000
+PriceLimit = 5000000000
+PriceBump = 10
+AccountSlots = 16
+GlobalSlots = 10240
+AccountQueue = 128
+GlobalQueue = 4096
+Lifetime = 10800000000000
+
+[Eth.GPO]
+Blocks = 20
+Percentile = 60
+MaxPrice = 500000000000
+
+[Node.P2P]
+MaxPeers = 200
+NoDiscovery = false
+StaticNodes = [
+ "enode://df9260d8d2421ab8b6f6a41b840069e8679029b1ed71113beb7d7a8a36e8e312d4419a74203cde613d55040cc60f21e51bd3854fab86f1e99e7162c048e844a5@127.0.0.1:30303?discport=0",
+ "enode://596e9edb7436e3ce5b64b99f23e7298a5dea92cfc4804d87108835231cdb4a7c903e5215871bbb153adbc19c5f11de084f9a0c55c6bf75b7acb67c9605a5e768@127.0.0.1:30304?discport=0",
+ "enode://39f8af7d013738d284eef2e012c6fd3102b7cebcc047d4a6f0b24d83170ccfb06ed1556eae2ffdd047897c8ef83b91ddecbfd0736b6f7b404a6b1dea9639ca46@127.0.0.1:30305?discport=0"
+]
+ListenAddr = ":30303"
+EnableMsgEvents = false
+
+[Node.HTTPTimeouts]
+ReadTimeout = 30000000000
+WriteTimeout = 30000000000
+IdleTimeout = 120000000000
+

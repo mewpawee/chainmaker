@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #Init Chain
-./go-ethereum/build/bin/geth init genesis.json --datadir ./node1
-./go-ethereum/build/bin/geth init genesis.json --datadir ./node2
-./go-ethereum/build/bin/geth init genesis.json --datadir ./node3
+./go-ethereum/build/bin/geth init config/genesis.json --datadir ./node1
+./go-ethereum/build/bin/geth init config/genesis.json --datadir ./node2
+./go-ethereum/build/bin/geth init config/genesis.json --datadir ./node3
 
 #Copy keystores
 cp config/keystore/UTC--2022-01-18T06-13-40.102714000Z--065cac36eaa04041d88704241933c41aabfe83ee node1/keystore
