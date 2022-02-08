@@ -20,11 +20,13 @@ case $argument in
         cp config/nodekeys/nodekey3 node3/geth/nodekey
         ;;
     "clean")
+        #Remove datadirs
         rm -rf node1
         rm -rf node2
         rm -rf node3
         ;;
     "start")
+        #Start node
         case $node in
             "node1")
                 ./go-ethereum/build/bin/geth --ethstats 'node1:asdf@localhost:3000' --datadir node1 --unlock 0x065cac36eaa04041d88704241933c41aabfe83ee --password config/password.txt --mine --nodiscover --config config/config.toml
