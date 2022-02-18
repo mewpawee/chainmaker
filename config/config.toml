@@ -52,7 +52,6 @@ StaticNodes = [
  "enode://596e9edb7436e3ce5b64b99f23e7298a5dea92cfc4804d87108835231cdb4a7c903e5215871bbb153adbc19c5f11de084f9a0c55c6bf75b7acb67c9605a5e768@127.0.0.1:30304?discport=0",
  "enode://39f8af7d013738d284eef2e012c6fd3102b7cebcc047d4a6f0b24d83170ccfb06ed1556eae2ffdd047897c8ef83b91ddecbfd0736b6f7b404a6b1dea9639ca46@127.0.0.1:30305?discport=0"
 ]
-ListenAddr = ":30303"
 EnableMsgEvents = false
 
 [Node.HTTPTimeouts]

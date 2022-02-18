@@ -3,6 +3,10 @@
 argument=$1
 node=$2
 case $argument in
+    "account")
+        #Create new Account
+        ./go-ethereum/build/bin/geth account new --password config/password.txt --datadir config | grep "Public address of the key" | tr -d " " | cut -d ":" -f2
+        ;;
     "init")
         #Init Chain
         echo "Initiate Chain..."
@@ -34,10 +38,10 @@ case $argument in
         echo "Starting node..."
         case $node in
             "node1")
-                ./go-ethereum/build/bin/geth --ethstats 'node1:asdf@localhost:3000' --datadir node1 --unlock 0x065cac36eaa04041d88704241933c41aabfe83ee --password config/password.txt --mine --nodiscover --config config/config.toml
+                ./go-ethereum/build/bin/geth --allow-insecure-unlock --http --http.api personal,eth,net,web3 --ethstats 'node1:asdf@localhost:3000' --datadir node1 --unlock 0x065cac36eaa04041d88704241933c41aabfe83ee --password config/password.txt --mine --nodiscover --config config/config.toml
                 ;;
             "node2")
-                ./go-ethereum/build/bin/geth --allow-insecure-unlock --ethstats 'node2:asdf@localhost:3000' --datadir node2 --unlock 0x9456c31c95315f15efd76806ad6aa783d0bc5425 --password config/password.txt --mine --port 30304 --nodiscover --config config/config.toml
+                ./go-ethereum/build/bin/geth --ethstats 'node2:asdf@localhost:3000' --datadir node2 --unlock 0x9456c31c95315f15efd76806ad6aa783d0bc5425 --password config/password.txt --mine --port 30304 --nodiscover --config config/config.toml
                 ;;
             "node3")
                 ./go-ethereum/build/bin/geth --ethstats 'node3:asdf@localhost:3000' --datadir node3 --unlock 0xde88ea17ed4f11af598a8a466152230449162cbb --password config/password.txt --mine --port 30305 --nodiscover --syncmode full --config config/config.toml
