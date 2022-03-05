@@ -17,9 +17,9 @@ tmux send-keys -t 3 'bash chain.sh start node1' Enter
 tmux send-keys -t 4 'bash chain.sh start node2' Enter
 tmux send-keys -t 5 'bash chain.sh start node3' Enter
 sleep 5
-tmux send-keys -t 0 'geth attach node1/geth.ipc' Enter
-tmux send-keys -t 1 'geth attach node2/geth.ipc' Enter
-tmux send-keys -t 2 'geth attach node3/geth.ipc' Enter
+tmux send-keys -t 0 './go-ethereum/build/bin/geth attach node1/geth.ipc' Enter
+tmux send-keys -t 1 './go-ethereum/build/bin/geth attach node2/geth.ipc' Enter
+tmux send-keys -t 2 './go-ethereum/build/bin/geth attach node3/geth.ipc' Enter
 
 tmux send-keys -t 0 'admin.nodeInfo.enode' Enter
 tmux send-keys -t 1 'admin.nodeInfo.enode' Enter
