@@ -10,10 +10,30 @@ a geth private blockchain setup script
 git install --recursive https://github.com/ptmew/chainmaker.git
 ```
 
-## Guide
+## Prerequirement
 - Clone this repo
 - Make geth binary at go-ethereum repo
 - Follow ethstats repo guide to install the package
-- Use Chain.sh to init the chain genesis
-- Create tmux session
-- Run geth-node script on tmux to automate the node startup process
+
+## Run this repo
+1. Use Chain.sh to init the chain genesis
+```
+./chian.sh init
+```
+
+2. Create tmux session
+```
+tmux new-session -s geth-node
+```
+
+3. Run geth-node script on tmux to automate the node startup process
+```
+./geth-node
+```
+
+## Command in chain.sh
+```
+init                # Automate a geth init
+clean               # Clean node datadir folder
+start <node-folder> # Start geth with the given datadir
+```
