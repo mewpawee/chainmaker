@@ -38,7 +38,7 @@ case $argument in
         echo "Starting node..."
         case $node in
             "node1")
-                ./go-ethereum/build/bin/geth --allow-insecure-unlock --ws --ws.api eth,net,web3,debug,txpool --http --http.api eth,net,web3,debug,txpool --ethstats 'node1:asdf@localhost:3000' --datadir node1 --unlock 0x065cac36eaa04041d88704241933c41aabfe83ee --password config/password.txt --mine --nodiscover --config config/config.toml
+                ./go-ethereum/build/bin/geth --allow-insecure-unlock --ws --ws.addr 0.0.0.0 --ws.api eth,net,web3,debug,txpool --http --http.addr 0.0.0.0 --http.api eth,net,web3,debug,txpool --ethstats 'node1:asdf@localhost:3000' --datadir node1 --unlock 0x065cac36eaa04041d88704241933c41aabfe83ee --password config/password.txt --mine --nodiscover --config config/config.toml
                 ;;
             "node2")
                 ./go-ethereum/build/bin/geth --ethstats 'node2:asdf@localhost:3000' --datadir node2 --unlock 0x9456c31c95315f15efd76806ad6aa783d0bc5425 --password config/password.txt --mine --port 30304 --nodiscover --config config/config.toml
