@@ -7,18 +7,18 @@ a geth private blockchain setup script
 
 ## Clone Repsitory
 ```bash
-git install --recursive https://github.com/ptmew/chainmaker.git
+git clone --recursive https://github.com/ptmew/chainmaker.git
 ```
 
 ## Prerequirement
 - Clone this repo
-- Make geth binary at go-ethereum repo
+- Make geth binary at go-ethereum repo (`cd go-ethereum` then `make geth`)
 - Follow ethstats repo guide to install the package
 
 ## Run this repo
 1. Use Chain.sh to init the chain genesis
 ```
-./chian.sh init
+./chain.sh init
 ```
 
 2. Create tmux session
